@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(:version => 20121211012136) do
   create_table "employees", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
-    t.integer  "rate",         :default => 25
+    t.string   "account_number"
+    t.integer  "rate",           :default => 25
     t.integer  "hours_week"
     t.integer  "worked_hours"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
 end

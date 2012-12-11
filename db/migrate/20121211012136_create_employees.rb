@@ -3,6 +3,7 @@ class CreateEmployees < ActiveRecord::Migration
     create_table :employees do |t|
       t.string  :firstname
       t.string  :lastname
+      t.string  :account_number
       t.integer :rate, default: 25
       t.integer :hours_week
       t.integer :worked_hours
