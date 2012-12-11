@@ -3,7 +3,10 @@ class Employee < ActiveRecord::Base
 
   validates_presence_of :firstname, :lastname, :account_number, :rate, :hours_week
 
+  validates_uniqueness_of :account_number
+
   validates :account_number, format: { 
     with: /^?[0-9]{16}/,
-    message: "The account name should be 16 digits, grouped by 4 and separated by '-'"}
+    message: "The account number should be 16 digits, letters and symbols not required"
+  }
 end

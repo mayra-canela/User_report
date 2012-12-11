@@ -1,1 +1,18 @@
-%h1 Build on progress
+%h1 Displaying employees
+
+%table{border: "1"}
+  %thead
+    %th ID
+    %th Fullname
+    %th Account number
+    %th Rate
+    %th Hours week
+    %th hours worked
+  %tbody
+  - @employees.each do |e|
+    %td= e.id
+    %td= "#{e.firstname} #{e.lastname}"
+    %td= e.account_number
+    %td= e.rate
+    %td= e.hours_week
+    %td= e.worked_hours
