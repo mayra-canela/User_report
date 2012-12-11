@@ -1,18 +1,36 @@
 %h1 Displaying employees
 
-%table{border: "1"}
+%table
   %thead
-    %th ID
-    %th Fullname
-    %th Account number
-    %th Rate
-    %th Hours week
-    %th hours worked
+    %tr
+      %th ID
+      %th Fullname
+      %th Account number
+      %th Rate
+      %th Hours week
+      %th hours worked
+      %th Salary
+      %th 
   %tbody
   - @employees.each do |e|
-    %td= e.id
-    %td= "#{e.firstname} #{e.lastname}"
-    %td= e.account_number
-    %td= e.rate
-    %td= e.hours_week
-    %td= e.worked_hours
+    %tr
+      %td= e.id
+      %td= "#{e.firstname} #{e.lastname}"
+      %td= e.account_number
+      %td= e.rate
+      %td= e.hours_week
+      %td= e.worked_hours
+      %td= e.salary
+      %td= link_to "edit", edit_employee_path(e.id)
+  %tr
+    %td
+    %td
+    %td
+    %td
+    %td
+    %td Total
+    %td= @total_amount
+    %td
+
+
+= link_to "New employee", new_employee_path

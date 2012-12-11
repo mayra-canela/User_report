@@ -9,4 +9,12 @@ class Employee < ActiveRecord::Base
     with: /^?[0-9]{16}/,
     message: "The account number should be 16 digits, letters and symbols not required"
   }
+
+  def salary
+    self.worked_hours * self.rate
+  end
+
+  def self.total_amount
+    Employee.all.map(&:salary).sum
+  end
 end
