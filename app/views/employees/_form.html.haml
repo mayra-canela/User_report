@@ -1,26 +1,38 @@
-= form_for @employee do |f|
+= form_for @employee, html: {class: 'form-horizontal'} do |f|
   - if @employee.errors.any?                                                                                                                                 
     #error_explanation
       %h2= "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
       %ul                  
         - @employee.errors.full_messages.each do |msg|
           %li= msg         
-  = f.label :firstname
-  = f.text_field :firstname
-  %br
-  = f.label :lastname
-  = f.text_field :lastname 
-  %br
-  = f.label :account_number
-  = f.text_field :account_number
-  %br
-  = f.label :rate
-  = f.text_field :rate
-  %br
-  = f.label :hours_week
-  = f.text_field :hours_week
-  %br
-  = f.label :worked_hours
-  = f.text_field :worked_hours
-  %br
+
+  .control-group
+    = f.label :firstname, class: "control-label"
+    .controls
+      = f.text_field :firstname
+
+  .control-group
+    = f.label :lastname, class: "control-label"
+    .controls
+      = f.text_field :lastname 
+
+  .control-group
+    = f.label :account_number, class: "control-label"
+    .controls
+      = f.text_field :account_number
+
+  .control-group
+    = f.label :rate, class: "control-label"
+    .controls
+      = f.text_field :rate
+
+  .control-group
+    = f.label :hours_week, class: "control-label"
+    .controls
+      = f.text_field :hours_week
+
+  .control-group
+    = f.label :worked_hours, class: "control-label"
+    .controls
+      = f.text_field :worked_hours
   = f.submit

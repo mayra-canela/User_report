@@ -1,6 +1,6 @@
 %h1 Displaying employees
 
-%table
+%table.table.table-hover
   %thead
     %tr
       %th ID
@@ -34,3 +34,5 @@
 
 
 = link_to "New employee", new_employee_path
+|
+= link_to "Export to CSV", reports_path(format: :csv)
