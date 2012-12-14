@@ -28,6 +28,7 @@ class EmployeesController < ApplicationController
         format.html { redirect_to root_path, notice: 'Employee was successfully updated.' }                                                                   
         format.json { render json: @employee, status: :created, location: @employee }
       else
+        flash[:alert]="Ups something went wrong"
         format.html { render action: "edit" }
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
