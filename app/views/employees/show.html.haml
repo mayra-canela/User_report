@@ -1,0 +1,24 @@
+%p#notice=notice
+%p
+  %b Full Name:
+  = @employee.firstname + " "+ @employee.lastname
+%p
+  %b Account_number:
+  = @employee.account_number
+%p
+  %b Rate:
+  =@employee.rate
+%p
+  %b Hours Week:
+  =@employee.hours_week
+
+%p
+  %b Worked Hours:
+  =@employee.worked_hours
+%p  
+  %b Salary:
+  =@employee.salary
+  %b
+= link_to 'Edit', edit_employee_path(@employee)
+\|
+= link_to 'Back', root_path

@@ -33,5 +33,15 @@ class EmployeesController < ApplicationController
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
+    end
+    
+  def show
+    @employee=Employee.find(params[:id])
   end
+
+  def destroy
+    @employee=Employee.destroy(params[:id])
+    redirect_to root_path
+  end
+
 end

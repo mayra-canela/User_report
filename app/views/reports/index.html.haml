@@ -21,7 +21,10 @@
       %td= e.hours_week
       %td= e.worked_hours
       %td= e.salary
-      %td= link_to "edit", edit_employee_path(e.id)
+      %td= link_to "Show", employee_path(e.id)
+      %td= link_to "Edit", edit_employee_path(e.id)
+      %td= link_to "Delete", employee_path(e.id), method: :delete, :data => { :confirm => 'Are you sure?' }
+
   %tr
     %td
     %td
@@ -30,6 +33,7 @@
     %td
     %td Total
     %td= @total_amount
+    %td
     %td
 
 
