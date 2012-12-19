@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20121211012136) do
     t.string   "lastname"
     t.string   "account_number"
     t.integer  "rate",           :default => 25
-    t.integer  "hours_week"
-    t.integer  "worked_hours"
+    t.integer  "hours_week",     :default => 0
+    t.integer  "worked_hours",   :default => 0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end
