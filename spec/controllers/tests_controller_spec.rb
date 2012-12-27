@@ -1,14 +1,18 @@
 require 'spec_helper'
 
 describe EmployeesController do
-  
-    it 'Should not allow to create blank objects' do
-      expect { Employee.create! }.to raise_error
-    end
 
-    it "is successful" do
-        response.should be_success
-      end
+  before(:each) { @employee = Employee.new(:firstname => "Antonio", :lastname => "Chavez", :account_number => 1232344548765435, :hours_week => 40) }
 
-      end
+  it "is successful" do
+    response.should be_success
+  end
+
+  it "should display a record in a table" do
+    @employee.save
+    visit root_path
+    page.should have_content "Antonio"
+  end
+
+end
 
