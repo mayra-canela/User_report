@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class='navbar'>
     <div class="navbar-inner">
       <a class="brand" href="#">User Reports</a>
@@ -21,6 +22,16 @@
   <% elsif notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
+
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
 
 <%= yield %>
 
